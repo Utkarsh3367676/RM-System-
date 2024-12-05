@@ -2,6 +2,14 @@
 
 This is a full-stack web application built using Node.js, Express, Sequelize ORM, and MySQL that allows users to manage bookings for train seats. The system provides functionalities for user registration, login, train management, seat availability checks, seat bookings, and booking retrieval, with security and JWT-based authentication.
 
+##Images 
+![WhatsApp Image 2024-12-05 at 22 43 28_08a9bd5d](https://github.com/user-attachments/assets/566cbc7b-5f44-49f1-b3fe-e32d5064239f)
+![WhatsApp Image 2024-12-05 at 22 41 33_0d31072d](https://github.com/user-attachments/assets/1bdc4903-9331-4f70-a06d-92a7306eaf3d)
+![WhatsApp Image 2024-12-05 at 22 41 54_5cd9b85a](https://github.com/user-attachments/assets/ffc128d9-41c3-473e-8d65-452adb50dd20)
+![WhatsApp Image 2024-12-05 at 22 42 16_37f1649f](https://github.com/user-attachments/assets/9545f1f2-72ee-4466-b10b-096732567d30)
+
+
+
 ## How to Get Started
 
 1. **Clone the Repository:**
