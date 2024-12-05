@@ -1,0 +1,114 @@
+<!-- views/options.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Options</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .train-info {
+            margin-top: 20px;
+            display: none;
+        }
+
+        .train-list {
+            margin-top: 20px;
+        }
+
+        .train-item {
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin: 10px 0;
+        }
+
+        .train-item button {
+            padding: 8px 15px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Railway Management</h1>
+    <div class="button-container">
+        <button onclick="checkLoginAndRedirect('book')">Book a Seat</button>
+        <button onclick="checkLoginAndRedirect('availability')">Get Seat Availability</button>
+    </div>
+
+    <div id="trainInfo" class="train-info">
+        <h2>Available Trains</h2>
+        <div class="train-list" id="trainList"></div>
+    </div>
+
+    <script>
+        // Check if the user is logged in
+        function isLoggedIn() {
+            return localStorage.getItem('token') !== null;
+        }
+
+        // Redirect to login page if not logged in
+        function checkLoginAndRedirect(page) {
+            if (isLoggedIn()) {
+                if (page === 'book') {
+                    window.location.href = '/book.html'; // Redirect to book seat page
+                } else if (page === 'availability') {
+                    showSeatAvailability(); // Show train availability
+                }
+            } else {
+                window.location.href = '/login.html'; // Redirect to login page
+            }
+        }
+
+        // Function to show seat availability
+        async function showSeatAvailability() {
+            const token = localStorage.getItem('token');
+            const response = await fetch('/api/trains/availability', {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                }
+            });
+            const data = await response.json();
+            const trainListElement = document.getElementById('trainList');
+            const trainInfoElement = document.getElementById('trainInfo');
+            
+            if (response.ok) {
+                trainInfoElement.style.display = 'block';
+                trainListElement.innerHTML = '';
+                data.trains.forEach(train => {
+                    const trainItem = document.createElement('div');
+                    trainItem.classList.add('train-item');
+                    trainItem.innerHTML = `
+                        <strong>Train Number:</strong> ${train.trainNumber} <br>
+                        <strong>Route:</strong> ${train.source} to ${train.destination} <br>
+                        <strong>Available Seats:</strong> ${train.availableSeats} <br>
+                        <button onclick="selectTrain(${train._id})">Select Train</button>
+                    `;
+                    trainListElement.appendChild(trainItem);
+                });
+            } else {
+                alert('No trains available or error occurred.');
+            }
+        }
+
+        // Handle selecting a train
+        function selectTrain(trainId) {
+            localStorage.setItem('selectedTrainId', trainId);
+            window.location.href = '/book.html'; // Go to the booking page
+        }
+    </script>
+</body>
+</html>

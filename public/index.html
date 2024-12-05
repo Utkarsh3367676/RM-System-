@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Railway Management System</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <img src="/images/logo.png" alt="Logo" class="logo">
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="/login" class="btn">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Welcome to the Railway Management System</h1>
+      <p>Efficient train management and seamless booking experience at your fingertips.</p>
+      <a href="#features" class="btn">Explore Features</a>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>
+        Our Railway Management System is designed to provide a seamless experience for managing trains, 
+        bookings, and schedules. It ensures user-friendly interactions and real-time updates for passengers 
+        and administrators alike.
+      </p>
+    </div>
+  </section>
+
+  <section id="features" class="features">
+    <div class="container">
+      <h2>Features</h2>
+      <div class="feature-list">
+        <div class="feature">
+          <h3>Train Schedules</h3>
+          <p>Check real-time train schedules and plan your journey easily.</p>
+        </div>
+        <div class="feature">
+          <h3>Seamless Booking</h3>
+          <p>Book your tickets hassle-free with just a few clicks.</p>
+        </div>
+        <div class="feature">
+          <h3>Admin Dashboard</h3>
+          <p>Admins can manage trains and monitor bookings effortlessly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form action="/contact" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Railway Management System. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>

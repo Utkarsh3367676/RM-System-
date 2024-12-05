@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Train</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Add a New Train</h1>
+    <form action="/api/trains/add" method="POST" class="form">
+      <label for="trainNumber">Train Number:</label>
+      <input type="text" id="trainNumber" name="trainNumber" placeholder="Train number" required>
+      <label for="name">Train Name:</label>
+      <input type="text" id="name" name="name" placeholder="Train name" required>
+      <label for="totalSeats">Total Seats:</label>
+      <input type="number" id="totalSeats" name="totalSeats" placeholder="Number of seats" required>
+      <label for="route">Route (comma-separated stations):</label>
+      <textarea id="route" name="route" placeholder="Station1, Station2, Station3..." required></textarea>
+      <button type="submit" class="btn">Add Train</button>
+    </form>
+  </div>
+</body>
+</html>

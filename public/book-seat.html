@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Seat</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Book Your Seat</h1>
+    <form action="/api/bookings/book" method="POST" class="form">
+      <label for="trainNumber">Train Number:</label>
+      <input type="text" id="trainNumber" name="trainNumber" placeholder="Enter train number" required>
+      <label for="seatCount">Number of Seats:</label>
+      <input type="number" id="seatCount" name="seatCount" placeholder="Number of seats" required>
+      <button type="submit" class="btn">Book Now</button>
+    </form>
+  </div>
+</body>
+</html>
