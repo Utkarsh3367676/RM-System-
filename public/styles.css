@@ -1,75 +1,143 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f9fa;
-  }
-  
-  .container {
-    width: 80%;
-    margin: 20px auto;
-    padding: 20px;
-    text-align: center;
-    border: 1px solid #ddd;
-    background: #fff;
-    border-radius: 8px;
-  }
-  
-  h1 {
-    color: #343a40;
-    margin-bottom: 20px;
-  }
-  
-  img.banner {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-  }
-  
-  .form {
-    max-width: 500px;
-    margin: 0 auto;
-  }
-  
-  label {
-    display: block;
-    margin: 10px 0 5px;
-    text-align: left;
-  }
-  
-  input, select, textarea {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+}
+
+.container {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 8px;
+}
+
+h1 {
+  color: #343a40;
+  margin-bottom: 20px;
+}
+
+img.banner {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+  text-align: left;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button.btn {
+  padding: 10px 20px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.btn:hover {
+  background: #0056b3;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #007bff;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #0056b3;
+}
+
+/* Features Section Styling */
+.features {
+  background: #f1f1f1;
+  padding: 40px 20px;
+  border-radius: 8px;
+}
+
+.features h2 {
+  color: #343a40;
+  margin-bottom: 30px;
+}
+
+.feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.feature {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 30%;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.feature h3 {
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.feature p {
+  color: #666;
+}
+
+/* Button Styling in Features */
+.feature button.btn {
+  margin-top: 15px;
+  padding: 10px 15px;
+  font-size: 14px;
+}
+
+.feature button.btn:hover {
+  background-color: #343a40;
+}
+
+/* Responsive Design for Features */
+@media (max-width: 768px) {
+  .feature {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
   }
-  
-  button.btn {
-    padding: 10px 20px;
-    background: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button.btn:hover {
-    background: #0056b3;
-  }
-  
-  nav ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  nav ul li {
-    display: inline-block;
-    margin: 0 10px;
-  }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: #007bff;
-  }
-  
+}

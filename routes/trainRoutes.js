@@ -1,24 +1,34 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const router = express.Router();
-const Train = require("../models/Train");
-const Booking = require("../models/Booking");
+const Train = require("../models/trainModel");
+const Booking = require("../models/bookingModel");
 
 // Add a train (Admin only)
 router.post("/add", async (req, res) => {
-  const { trainNumber, name, totalSeats, route } = req.body;
+  const { trainNumber, trainName, totalSeats, route } = req.body;
+  console.log("Incoming data:", req.body);
+
   try {
     // Validate request data
-    if (!trainNumber || !name || !totalSeats || !route) {
+    if (!trainNumber || !trainName || !totalSeats || !route) {
       return res.status(400).send("All fields are required.");
     }
 
-    const newTrain = new Train({ trainNumber, name, totalSeats, route });
+    const newTrain = new Train({
+      trainNumber,
+      trainName,
+      totalSeats,
+      availableSeats: totalSeats,
+      route,
+    });
+
     await newTrain.save();
 
     res.status(201).send("Train added successfully!");
   } catch (err) {
-    console.error(err);
+    console.error("Error details:", err.message);
+    console.error("Error stack:", err.stack);
     res.status(500).send("Error adding train");
   }
 });
